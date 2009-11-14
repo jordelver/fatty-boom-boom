@@ -1,0 +1,17 @@
+<div id="add-box">
+  <form method="post" action="/" autocomplete="off">
+    <fieldset>
+      <label for="item">Item (required)</label>
+      <input type="text" id="item" name="item" />
+    </fieldset>
+    <fieldset>
+      <label for="kcal">Calories</label>
+      <input type="text" id="kcal" name="kcal" />
+    </fieldset>
+    <fieldset>
+      <button id="submit" value="Add">Add</button>
+    </fieldset>
+  </form>
+
+  <%= show_error_message(@new) %>
+</div>
