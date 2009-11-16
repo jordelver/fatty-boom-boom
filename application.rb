@@ -41,7 +41,7 @@ helpers do
   def format_date(date)
     date.strftime("%l:%M%P")
   end
-  
+
   def show_error_message(item)
     return if item.nil?
     if !item.valid?
@@ -70,7 +70,7 @@ end
 
 get '/items' do
   content_type :json
-  query = 'SELECT DISTINCT item, kcal FROM items WHERE item LIKE ? ORDER BY item ASC' 
+  query = 'SELECT DISTINCT item, kcal FROM items WHERE item LIKE ? ORDER BY item ASC'
   items = repository(:default).adapter.query(query, params[:q] + "%")
   output = []
   items.each do |item|
