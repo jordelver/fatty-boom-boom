@@ -1,0 +1,33 @@
+= Fatty boom boom
+
+Oh, man you's a fatty boom boom!
+
+== TODO
+
+Add DELETE links for each item
+
+Ajaxify the adding of new items
+
+Add config.ru
+
+== IDEAS
+Links below for filtering and other days
+  - yesterday, today
+  - last week
+  - months
+    - list of months
+  - years
+
+Totals
+  - by day
+  - by month
+  - by year
+
+Graphs
+  - by day
+  - by month
+  - by year
+
+== CREDITS
+DataMapper database migration tasks from http://github.com/zapnap/sinatra-template/
+Config module adapted (made worse) from http://railstips.org/2009/11/10/app-configuration-so-simple-your-mama-could-use-it
