@@ -5,6 +5,11 @@ require 'dm-timestamps'
 require 'dm-serializer'
 require 'dm-validations'
 
+# Look in the lib folder for files to require
+$:.unshift(File.join(File.dirname(__FILE__), 'lib'))
+
+require 'config'
+
 configure do
   DataMapper::Logger.new(STDOUT, 0)
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/fatty.sqlite3")
@@ -52,6 +57,10 @@ helpers do
       eos
     end
   end
+end
+
+use Rack::Auth::Basic do |username, password|
+  [username, password] == [Config['admin']['username'], Config['admin']['password']]
 end
 
 before do
