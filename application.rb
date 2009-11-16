@@ -1,12 +1,12 @@
+# Look in the lib folder for files to require
+$:.unshift(File.join(File.dirname(__FILE__), 'lib'))
+
 require 'rubygems'
 require 'sinatra'
 require 'dm-core'
 require 'dm-timestamps'
 require 'dm-serializer'
 require 'dm-validations'
-
-# Look in the lib folder for files to require
-$:.unshift(File.join(File.dirname(__FILE__), 'lib'))
 
 require 'config'
 require 'models'
