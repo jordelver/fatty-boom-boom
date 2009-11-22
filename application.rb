@@ -11,6 +11,8 @@ require 'dm-validations'
 require 'config'
 require 'models'
 
+use Rack::MethodOverride
+
 configure do
   DataMapper::Logger.new(STDOUT, 0)
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/fatty.sqlite3")
@@ -62,6 +64,12 @@ post '/' do
   @new = Item.new(:item => params[:item], :kcal => params[:kcal])
   redirect '/' if @new.save
   erb :index
+end
+
+delete '/item/:id' do
+  item = Item.get(params[:id])
+  item.destroy! unless item.nil?
+  redirect '/'
 end
 
 get '/items' do

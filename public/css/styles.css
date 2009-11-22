@@ -107,7 +107,7 @@ button#submit:focus {
   color: #fff;
 }
 
-#previous div {
+#previous div.item {
   position: relative;
   background: #DE3349;
   padding: 10px;
@@ -124,12 +124,42 @@ button#submit:focus {
   font-size: 80%;
 }
 
-span.date {
+div.meta {
   position: absolute;
-  right: 10px;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-radius-bottomright: 5px;
+}
+
+span.date {
+  width: 100%;
+  display: block;
+  position: absolute;
+  right: 60px;
+  height: 100%;
   color: #e7e7e7;
   font-size : 90%;
-  padding-top: 2px;
+  text-align: right;
+  padding-top: 10px;
+}
+
+span.delete {
+  background: #E7354B;
+  width: 46px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-radius-bottomright: 5px;
 }
 
 #archive {

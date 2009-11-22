@@ -70,9 +70,15 @@
 
       <div class="item">
         <%= format_item(item) %>
-        <span class="date">
-          <%= format_date(item.created_at) %>
-        </span>
+        <div class="meta">
+          <span class="date"><%= format_date(item.created_at) %></span>
+          <span class="delete">
+            <form method="post" action="/item/<%= item.id %>">
+              <input type="hidden" name="_method" value="delete" />
+              <input type="image" src="/images/delete.gif" />
+            </form>
+          </span>
+        </div>
       </div>
 
     <% end %>
