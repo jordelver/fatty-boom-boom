@@ -14,6 +14,7 @@ use Rack::MethodOverride
 configure do
   DataMapper::Logger.new(STDOUT, 0)
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/fatty.sqlite3")
+  DataMapper.auto_upgrade!
 end
 
 not_found do
