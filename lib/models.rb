@@ -1,7 +1,7 @@
 class Item
   include DataMapper::Resource
   property :id, Serial
-  property :item, String, :nullable => false
+  property :item, String, :required => true
   property :kcal, Integer
   property :created_at, DateTime
   property :updated_at, DateTime

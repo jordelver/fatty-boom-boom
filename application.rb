@@ -74,7 +74,7 @@ end
 get '/items' do
   content_type :json
   query = 'SELECT DISTINCT item, kcal FROM items WHERE item LIKE ? ORDER BY item ASC'
-  items = repository(:default).adapter.query(query, params[:q] + "%")
+  items = repository(:default).adapter.select(query, params[:q] + "%")
   output = []
   items.each do |item|
     output << { :item => item.item, :kcal => item.kcal }
